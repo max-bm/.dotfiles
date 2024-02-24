@@ -9,6 +9,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh
     chsh -s /opt/homebrew/bin/zsh
 fi
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # --- INSTALL GNU STOW --- #
 if [[ "$OSTYPE" == "linux"* ]]; then
