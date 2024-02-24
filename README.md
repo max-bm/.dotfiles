@@ -11,3 +11,4 @@
 
 - Rename `alacritty` directory to `config` and store all `.config` folders in there?
 - Tidy up `.zshrc` and add it to the repo
+- Update `README.md`
