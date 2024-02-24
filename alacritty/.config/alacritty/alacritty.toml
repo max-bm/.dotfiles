@@ -1,0 +1,13 @@
+# Ref: https://alacritty.org/config-alacritty.html
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+# --- GENERAL --- #
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+# --- WINDOW --- #
+[window]
+dimensions = { columns = 120, lines = 40 }
+opacity = 1
+blur = true
