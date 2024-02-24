@@ -20,9 +20,10 @@ A repository for storing my personal dotfiles
 1. Run `stow` to create symlinks to the dotfiles
 
     ```bash
-    stow config # [...]
+    stow config home # [...]
     ```
 
 ## Todo
 
-- Tidy up `.zshrc` and add it to the repo
+- Configure prompt (starship?)
+- Other: git (lazygit?), neovim, tmux, zoxide, i3/regolith, ...
