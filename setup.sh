@@ -26,8 +26,8 @@ stow zshrc
 source ~/.zshrc
 
 # --- INSTALL NERD FONT --- #
-stow fonts
 if [[ "$OSTYPE" == "linux"* ]]; then
+    stow fonts
     fc-cache -fv
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     cp fonts/.fonts/* ~/Library/Fonts/
