@@ -11,3 +11,7 @@ args = ["-l"]
 dimensions = { columns = 120, lines = 40 }
 opacity = 1
 blur = true
+
+# --- FONT --- #
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular" }

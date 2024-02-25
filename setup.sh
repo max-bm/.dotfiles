@@ -27,7 +27,11 @@ source ~/.zshrc
 
 # --- INSTALL NERD FONT --- #
 stow fonts
-fc-cache -fv
+if [[ "$OSTYPE" == "linux"* ]]; then
+    fc-cache -fv
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    cp fonts/.fonts/* ~/Library/Fonts/
+fi
 
 # --- INSTALL ALACRITTY --- #
 # Ref: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
@@ -71,3 +75,6 @@ cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 # Install alacritty configuration
 cd ~/.dotfiles
 stow alacritty
+
+# --- INSTALL STARSHIP --- #
+curl -sS https://starship.rs/install.sh | sh
