@@ -4,26 +4,16 @@ A repository for storing my personal dotfiles
 
 ## Instructions
 
-1. Clone the repository
+Clone the repository, change directory, and run the install script:
 
     ```bash
     git clone git@github.com:max-bm/.dotfiles.git
     cd .dotfiles
-    ```
-
-1. (Optional) Run the install script
-
-    ```bash
     ./setup.sh
-    ```
-
-1. Run `stow` to create symlinks to the dotfiles
-
-    ```bash
-    stow config home # [...]
     ```
 
 ## Todo
 
 - Configure prompt (starship?)
+- Split install script into separate scripts (in scripts dir) and only run if necessary
 - Other: git (lazygit?), neovim, tmux, zoxide, i3/regolith, ...

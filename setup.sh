@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# Script to install and configure developer tools. This script assumes you are running
+# it from the root of this repository.
+
+# --- INSTALL GNU STOW --- #
+if [[ "$OSTYPE" == "linux"* ]]; then
+    sudo apt install -y stow
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install stow
+fi
+
 # --- INSTALL ZSH --- #
 # Ref: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 if [[ "$OSTYPE" == "linux"* ]]; then
@@ -11,13 +21,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install zsh configuration
+stow zshrc
 
-# --- INSTALL GNU STOW --- #
-if [[ "$OSTYPE" == "linux"* ]]; then
-    sudo apt install -y stow
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install stow
-fi
+# --- INSTALL NERD FONT --- #
+stow fonts
+fc-cache -fv
 
 # --- INSTALL ALACRITTY --- #
 # Ref: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
@@ -58,4 +67,5 @@ scdoc < extra/man/alacritty-bindings.5.scd | gzip -c | sudo tee /usr/local/share
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
-
+# Install alacritty configuration
+stow alacritty
