@@ -12,3 +12,4 @@ if [[ "$OSTYPE" == "linux"* ]]; then
     eval "$(ssh-agent -s)" >/dev/null 2>/dev/null
     ssh-add ~/.ssh/cts_id_rsa >/dev/null 2>/dev/null
 fi
+export PATH=$PATH:~/.local/share/pypoetry/venv/bin
