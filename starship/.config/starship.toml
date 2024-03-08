@@ -1,0 +1,9 @@
+format = '''
+ $fill 
+$all'''
+
+add_newline = false
+
+[fill]
+symbol = "─"
+style = "blue"
